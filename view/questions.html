@@ -1,0 +1,74 @@
+% include('view/header.html', title='Login', loggedIn=True)
+    
+
+    <div class="container">
+			<br>
+			<!-- Example row of columns -->
+			<div class="row">
+				<div class="col-md-7  col-md-offset-1" >
+				<div class="row">
+					<div class="panel panel-default">
+					<div class="panel-heading">
+					 Question No <b id="quest-no"></b> <img src="/img/ajax-small.gif" id="tspinner">
+					</div>
+					<div class="panel-body">
+						<p id="question">
+						</p>
+                  </div>
+				</div>
+				</div>				
+				<div class="row">
+					<div class="radio">
+						<label>
+							<input type="radio" name="answer"  value="1" checked>
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="answer"  value="2" checked>
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="answer"  value="3" checked>
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="answer"  value="4" checked>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+                  <div class="col-md-6 col-md-offset-7" >
+					<button type="button" class="btn btn-success"  id="submit">
+						Submit
+					</button>
+					<button type="button" class="btn btn-danger"  id="pass">
+						Pass
+					</button>
+					<button type="button" class="btn btn-primary" id="complete">
+						Complete
+					</button>
+				</div></div>
+
+			</div>
+			<div class="col-md-3" >
+		
+				<div class="panel panel-default">
+					<div class="panel-heading">Time Remaining</div>					
+					<div class="counter">
+						<span id="minute">--</span>:<span id="second">--</span>
+					</div>
+					
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">Questions </div>										
+					<div class="panel-body"  id="qstatus">Loading...
+					</div>						
+				</div>
+			</div>
+		</div>
+      <hr>
+
+% include('view/footer.html',ExtraScripts='<script src="/js/exams.js"></script>')

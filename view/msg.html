@@ -1,0 +1,22 @@
+% include('view/header.html', title=title, loggedIn=loggedIn)
+    	
+		<div class="container"><br>
+			<div class="row" >
+				<div class="col-md-4 col-md-offset-4" >
+					<div class="panel panel-default">
+						%if title:
+						<div class="panel-heading">
+							{{!title}}
+						</div>
+						%end
+						<div class="panel-body">
+							<div class="panel-body alert alert-{{type}}">
+								{{!text}}  
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+
+% include('view/footer.html')

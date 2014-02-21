@@ -1,0 +1,66 @@
+% include('view/header.html', title='Add User', loggedIn=True)
+   	
+		<div class="container"><br>
+			<div class="row" >
+				<div class="col-md-12 col-md-offset-1" >
+					
+							
+							<form class="form-inline" role="form" method="POST">
+
+								<div class="form-group">
+									<label for="inputEmail3" class="col-sm-3 control-label">Id</label>
+									<div class="col-sm-9">
+										<input name="id" type="text" class="form-control" id="inputUserid" placeholder="UserId" required="required">
+									</div>
+									</div>
+
+								<div class="form-group">
+									<label for="inputEmail3" class="col-sm-3 control-label">UserName</label>
+									<div class="col-sm-9">
+										<input name="username" type="text" class="form-control" id="inputUsername" placeholder="UserName" required="required">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputPassword3" class="col-sm-3 control-label"> Password</label>
+									<div class="col-sm-9">
+										<input name="password" type="text" class="form-control" id="inputPassword3" placeholder="Password" required="required">
+									</div>
+								</div>
+								
+								<div class="form-group last">
+									<div class="col-sm-offset-3 col-sm-9">
+										<button type="submit" class="btn btn-success btn-sm" name="submit">
+											Add User
+										</button>
+										
+									</div>
+								</div>
+							</form>
+						
+				</div>
+			</div>
+			<br><br>
+			<div class="panel-body">
+						% if error:
+							<div class="panel-body alert alert-danger">
+								Error Addin User
+							</div>
+							<br>
+						% end
+			</div>				
+			<div class="row" >
+				<div class="col-md-4 col-md-offset-4" >
+					<table class="table table-striped">
+						<tr><th>Userid</th><th>Username</th></tr>
+						% for r in results:
+							<tr><td>{{r[1]}}</td> <td>{{r[0]}}</td></tr>
+						% end
+					</table>
+				</div>
+			</div>
+
+
+
+		</div>
+
+% include('view/footer.html',);

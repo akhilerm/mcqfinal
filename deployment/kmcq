@@ -1,0 +1,18 @@
+#Save to /etc/apache2/sites-available/kmcq
+#then run : a2ensite
+
+<VirtualHost *:80>
+    ServerName bangbang
+	ServerAdmin mail2nahar@gmail.com
+	ServerAlias bangbang.lan
+	
+    WSGIDaemonProcess kmcq user=www-data group=www-data processes=1 threads=1
+    WSGIScriptAlias / /var/www/kmcq/app.wsgi
+
+    <Directory /var/www/kmcq>
+        WSGIProcessGroup kmcq
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>

@@ -1,0 +1,26 @@
+% include('view/header.html', title='Welcome', loggedIn=True)
+    	
+		<div class="container"><br>
+			<div class="row" >
+				<div class="col-md-4 col-md-offset-4" >
+					<div class="panel panel-default">
+					% if ExamWritten:
+						<div class="panel-heading">
+							Exam completed
+						</div>
+						<div class="panel-body">							
+							<div class="panel-body alert alert-success">
+								You have completed the test! Results will be anounced shortly.  
+							</div>
+							<br>
+						</div>
+					% else:
+							<p>Rules.......</p>
+							<a href="/questions" class="btn btn-primary">Start Test</a>
+					% end
+					</div>
+				</div>
+			</div>
+		</div>
+		
+% include('view/footer.html')
